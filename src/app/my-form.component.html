@@ -1,0 +1,60 @@
+ 
+<div class="box text-center"><h1>Registration Form</h1></div>
+<div class="container">
+    
+    <form class="form" #userForm="ngForm" (ngSubmit)="submitForm(userForm.value)" novalidate > 
+    <div class="form-group"> 
+    <label>Name</label>
+    <input type="text" name = "name"  pattern="[A-Za-z]+" minlength="4" class="form-control" #idname required  ngModel>
+    <b> {{idname.className}}</b>
+    
+    </div>
+
+    <div class="form-group"> 
+        <label>Phone Number</label>
+        <input type="text" name = "phone"  pattern="[0-9]+" maxlength="10" class="form-control" #idnumber required   ngModel >
+        <b> {{idnumber.className}}</b>
+        <div >
+
+        </div>
+        
+     </div>
+
+
+     <div class="form-group"> 
+        <label>Occupation Type</label>
+        <select name="occupation" class="form-control"  #idoccupation  required  ngModel>
+            <option value="Student">Student</option>
+            <option value="Employee">Employee</option>
+            <option value="Unemployed">Unemployed</option>
+            
+             
+          </select>
+         <b> {{idoccupation.className}}</b>
+        
+        </div>
+
+
+
+
+
+
+    <button  [disabled]= "!userForm.form.valid"          type="submit" class="btn btn-primary"> Submit</button> 
+    <button type="button" (click)="clicked()"  class="btn btn-primary"> View List</button>
+
+    
+    
+    
+    
+    </form>
+    
+    <!--button ng-click="window.open('http://www.google.com')">fkh </button>  
+    <a routerLink="/my-comp2" routerLinkActive="active">Crisis Center</a>
+    <button ng-click="redirect()">My page</button-->
+    
+
+     <my-comp2 [greetMessage]="childmessage"></my-comp2>`
+    
+    
+    </div>
+    
