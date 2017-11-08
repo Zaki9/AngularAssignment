@@ -19,20 +19,26 @@ import {MyComp2} from './app.component.mycomp2';
 
 
 export class MyComp {
+  public static c=0;
   public name="" ;
   cm : string = "";
-  childmessage : string = "";
-  
-  public parentModal="zaki" ;
+   
+   
       submitForm(value : any ){
+        MyComp.c = MyComp.c + 1;
         console.log( value);   
         this.name =value.name + " "+value.phone  + " " + value.occupation;
+        this.cm = (MyComp.c).toString();
+          localStorage.setItem(this.cm , JSON.stringify(value));
+        
+
+          alert("User Registered , Click ViewList to See List");
+           
+
+           
+
+
        }
 
-    clicked(){
-        console.log("clicked");            
-        this.childmessage =this.name ;
-        console.log(this.cm);
-        
-    }
+   
 }
